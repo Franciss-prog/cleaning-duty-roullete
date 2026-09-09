@@ -148,6 +148,11 @@ export function getAvailablePool(cycleId: string): Student[] {
 	return activeStudents.filter((s) => !usedIds.has(s.id));
 }
 
+export function setStudentActive(id: string, active: boolean): void {
+	const students = getStudents().map((s) => (s.id === id ? { ...s, active } : s));
+	write(KEYS.students, students);
+}
+
 export function getSettings(): Settings {
 	return read<Settings>(KEYS.settings, DEFAULT_SETTINGS);
 }

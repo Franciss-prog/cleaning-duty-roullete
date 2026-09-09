@@ -103,7 +103,7 @@
 			'',
 			"Today's assigned cleaners:",
 			'',
-			...selected.map((s) => s.shortName),
+			...selected.map((s) => s.name),
 			'',
 			'Please complete your assigned cleaning duty.'
 		];
